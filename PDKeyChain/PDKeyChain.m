@@ -26,6 +26,8 @@ static NSString * const kPDKeyChainKey = @"com.xxx.keychainKey";
 
 + (void)keyChainDelete{
     [self delete:kPDKeyChainKey];
+    NSLog(@"%@",kPDKeyChainKey);
+    
 }
 
 + (NSMutableDictionary *)getKeychainQuery:(NSString *)service {
