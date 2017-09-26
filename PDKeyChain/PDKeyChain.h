@@ -12,6 +12,8 @@
 @interface PDKeyChain : NSObject
 
 /**
+ //ruan jian key chain
+ // dev_test
  *  存储字符串到 KeyChain
  *
  *  @param service NSString
