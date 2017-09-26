@@ -38,7 +38,7 @@ static NSString * const kPDKeyChainKey = @"com.xxx.keychainKey";
             (id)kSecAttrAccessibleAfterFirstUnlock,(id)kSecAttrAccessible,
             nil];
 }
-
+//存入
 + (void)save:(NSString *)service data:(id)data {
     //Get search dictionary
     NSMutableDictionary *keychainQuery = [self getKeychainQuery:service];
@@ -49,7 +49,7 @@ static NSString * const kPDKeyChainKey = @"com.xxx.keychainKey";
     //Add item to keychain with the search dictionary
     SecItemAdd((CFDictionaryRef)keychainQuery, NULL);
 }      
-
+//读取
 + (id)load:(NSString *)service {
     id ret = nil;
     NSMutableDictionary *keychainQuery = [self getKeychainQuery:service];
@@ -70,7 +70,7 @@ static NSString * const kPDKeyChainKey = @"com.xxx.keychainKey";
         CFRelease(keyData);
     return ret;
 }
-
+//删除
 + (void)delete:(NSString *)service {
     NSMutableDictionary *keychainQuery = [self getKeychainQuery:service];
     SecItemDelete((CFDictionaryRef)keychainQuery);
